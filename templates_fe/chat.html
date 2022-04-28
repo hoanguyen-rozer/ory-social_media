@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+
+    <!-- ------------------------------- Favicon ------------------------------- -->
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+
+    <!-- ------------------------------- Boxicon ------------------------------- -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- ------------------------------ Bootstrap ------------------------------ -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <!-- ----------------------------- Custom Css ------------------------------ -->
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <!-- ------------------------------- Overlay ------------------------------- -->
+        <div class="overlay closed" data-overlay>
+        </div>
+
+        <!-- ------------------------------- Header -------------------------------- -->
+
+        <header class="header">
+
+            <!-- ----------------------------- Top Navbar ------------------------------ -->
+
+            <nav class="navbar">
+                <div class="navbar__brand">
+                    <a class="navbar__logo" href="#">
+                        <img src="../images/logo.png" alt="" class="d-inline-block align-text-top">
+                        <span>ORY</span>
+                    </a>
+                    <div class="navbar__toggle">
+                        <i class='bx bx-menu'></i>
+                    </div>
+                </div>
+                <div class="navbar__searchbar">
+                    <form class="search-form">
+                        <input class="form-control" type="text" placeholder="Search">
+                        <button class="btn" type="submit">
+                            <i class='bx bx-search'></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="navbar__menu">
+                    <a href="" class="user-link">
+                        <img src="../images/user-1.jpg" alt="user">
+                        <span>John Doe</span>
+                    </a>
+                    <a href="">
+                        <i class='bx bxs-home'></i>
+                    </a>
+                    <div class="btn-group">
+                        <button class="btn" type="button" id="messageUserId" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class='bx bxs-group'></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="messageUserId">
+                            <a href="#" class="dropdown-item">
+                                <div class="icon">
+                                    <img class="img-45 radius-50" src="../images/user-3.jpg" alt="user-avatar">
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Bni Emma Watson</h5>
+                                    <small class="">13 Mar</small>
+                                    <p>Hello</p>
+                                </div>
+                                <button class="btn btn-primary">Confirm</button>
+                                <button class="btn btn-danger">Delete Request</button>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <div class="icon">
+                                    <img class="img-45 radius-50" src="../images/user-3.jpg" alt="user-avatar">
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Bni Emma Watson</h5>
+                                    <small class="">13 Mar</small>
+                                    <p>Hello</p>
+                                </div>
+                                <button class="btn btn-primary">Confirm</button>
+                                <button class="btn btn-danger">Delete Request</button>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <div class="icon">
+                                    <img class="img-45 radius-50" src="../images/user-3.jpg" alt="user-avatar">
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Bni Emma Watson</h5>
+                                    <small class="">13 Mar</small>
+                                    <p>Hello</p>
+                                </div>
+                                <button class="btn btn-primary">Confirm</button>
+                                <button class="btn btn-danger">Delete Request</button>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <div class="icon">
+                                    <img class="img-45 radius-50" src="../images/user-3.jpg" alt="user-avatar">
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Bni Emma Watson</h5>
+                                    <small class="">13 Mar</small>
+                                    <p>Hello</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn" type="button" id="messageUserId" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class='bx bxs-message'></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="messageUserId">
+                            <a href="#" class="dropdown-item">
+                                <div class="icon">
+                                    <img class="img-45 radius-50" src="../images/user-3.jpg" alt="user-avatar">
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Bni Emma Watson</h5>
+                                    <small class="">13 Mar</small>
+                                    <p>Hello</p>
+                                </div>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <div class="icon">
+                                    <img class="img-45 radius-50" src="../images/user-3.jpg" alt="user-avatar">
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Bni Emma Watson</h5>
+                                    <small class="">13 Mar</small>
+                                    <p>Hello</p>
+                                </div>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <div class="icon">
+                                    <img class="img-45 radius-50" src="../images/user-3.jpg" alt="user-avatar">
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Bni Emma Watson</h5>
+                                    <small class="">13 Mar</small>
+                                    <p>Hello</p>
+                                </div>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <div class="icon">
+                                    <img class="img-45 radius-50" src="../images/user-3.jpg" alt="user-avatar">
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Bni Emma Watson</h5>
+                                    <small class="">13 Mar</small>
+                                    <p>Hello</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn" type="button" id="notificationUserId" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class='bx bxs-bell'></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationUserId">
+                            <a href="#" class="dropdown-item">
+                                <div class="icon">
+                                    <img class="img-45 radius-50" src="../images/user-3.jpg" alt="user-avatar">
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Bni Emma Watson</h5>
+                                    <small class="">13 Mar</small>
+                                    <p>has add a story</p>
+                                </div>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <div class="icon">
+                                    <img class="img-45 radius-50" src="../images/user-3.jpg" alt="user-avatar">
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Bni Emma Watson</h5>
+                                    <small class="">13 Mar</small>
+                                    <p>has add a story</p>
+                                </div>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <div class="icon">
+                                    <img class="img-45 radius-50" src="../images/user-3.jpg" alt="user-avatar">
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Bni Emma Watson</h5>
+                                    <small class="">13 Mar</small>
+                                    <p>has add a story</p>
+                                </div>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <div class="icon">
+                                    <img class="img-45 radius-50" src="../images/user-3.jpg" alt="user-avatar">
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Bni Emma Watson</h5>
+                                    <small class="">13 Mar</small>
+                                    <p>has add a story</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn" type="button" id="userMenu" data-bs-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class='bx bxs-down-arrow'></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+                            <a href="profile.html" class="dropdown-item">
+                                <div class="icon">
+                                    <i class='bx bxs-user-account'></i>
+                                </div>
+                                <div class="description">
+                                    <h5 class="">My Profile</h5>
+                                    <p class="">View personal profile details.</p>
+                                </div>
+                            </a>
+                            <a href="profile.html" class="dropdown-item">
+                                <div class="icon">
+                                    <i class='bx bx-edit'></i>
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Edit Profile</h5>
+                                    <p class="">Edit your personal details.</p>
+                                </div>
+                            </a>
+                            <a href="profile.html" class="dropdown-item">
+                                <div class="icon">
+                                    <i class='bx bx-user-pin'></i>
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Account Settings</h5>
+                                    <p class="">Manager your account parameters.</p>
+                                </div>
+                            </a>
+                            <a href="profile.html" class="dropdown-item">
+                                <div class="icon">
+                                    <i class='bx bx-lock'></i>
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Privacy Settings</h5>
+                                    <p class="">Control your privacy parameters.</p>
+                                </div>
+                            </a>
+                            <a href="profile.html" class="dropdown-item">
+                                <div class="icon">
+                                    <i class='bx bx-exit'></i>
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Logout Account</h5>
+                                    <p class="">Logout your account soon.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- ---------------------------- Main Content ----------------------------- -->
+
+        <main class="main-container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card__body chat-page">
+                                <div class="chat-data-block">
+                                    <div class="row">
+                                        <div class="col-lg-3 chat-data-left">
+
+                                            <!-- ---------------------------- Chat Sidebar ----------------------------- -->
+
+                                            <div class="chat-search">
+                                                <div class="chat-search__header">
+                                                    <div class="chat-profile">
+                                                        <img src="../images/user-2.jpg" alt="chat-user"
+                                                            class="img-60 radius-50 ">
+                                                    </div>
+                                                    <div class="chat-caption">
+                                                        <h5 class="">Bni Jordan</h5>
+                                                        <p class="">Web Designer</p>
+                                                    </div>
+                                                </div>
+                                                <div class="chat-search__searchbar">
+                                                    <div class="form-group chat-search-data m-0">
+                                                        <input type="text" class="form-control round" id="chat-search"
+                                                            placeholder="Search">
+                                                        <i class='bx bx-search'></i>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="chat-sidebar-channel">
+                                                <h5>Public Channels</h5>
+                                                <ul class="nav nav-pills flex-column member-list">
+                                                    <li class="nav-item">
+                                                        <a href="#chatbox1" class="nav-link">
+                                                            <div class="chat-member">
+                                                                <div class="avatar mr-2">
+                                                                    <img src="../images/user-2.jpg" alt="chatuserimage"
+                                                                        class="img-50 radius-50 ">
+                                                                </div>
+                                                                <div class="chat-sidebar-name">
+                                                                    <h5 class="mb-0">Team Discussions</h5>
+                                                                    <span>Lorem Ipsum is</span>
+                                                                </div>
+                                                                <div class="chat-meta">
+                                                                    <div class="chat-msg-counter bg-primary text-white">
+                                                                        20</div>
+                                                                    <span class="text-nowrap">05 min</span>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="#chatbox2" class="nav-link">
+                                                            <div class="chat-member">
+                                                                <div class="avatar mr-2">
+                                                                    <img src="../images/user-2.jpg" alt="chatuserimage"
+                                                                        class="img-50 radius-50 ">
+                                                                </div>
+                                                                <div class="chat-sidebar-name">
+                                                                    <h5 class="mb-0">Team Discussions</h5>
+                                                                    <span>Lorem Ipsum is</span>
+                                                                </div>
+                                                                <div class="chat-meta">
+                                                                    <div class="chat-msg-counter bg-primary text-white">
+                                                                        20</div>
+                                                                    <span class="text-nowrap">05 min</span>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-9">
+
+                                            <!-- -------------------------- Chat Box Content --------------------------- -->
+
+                                            <div class="tab-content chat-data">
+                                                <div class="tab-pane fade active show" id="chatbox1" role="tabpanel">
+                                                    <div class="chat-head">
+                                                        <div class="chat-header-info">
+                                                            <div class="avatar chat-user-profile">
+                                                                <img src="../images/user-2.jpg" alt="avatar"
+                                                                    class="img-50 radius-50 ">
+                                                            </div>
+                                                            <h4 class="mb-0">Team Discussions</h4>
+                                                        </div>
+                                                        <div class="chat-header-icons">
+                                                            <a href="" class="chat-icon-phone">
+                                                                <i class='bx bx-phone-call'></i>
+                                                            </a>
+                                                            <a href="" class="chat-icon-video">
+                                                                <i class='bx bx-video'></i>
+                                                            </a>
+                                                            <a href="" class="chat-icon-delete">
+                                                                <i class='bx bx-trash'></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="chat-content">
+                                                        <div class="chat">
+                                                            <div class="chat-user">
+                                                                <a class="avatar m-0">
+                                                                    <img src="../images/user-2.jpg" alt="avatar"
+                                                                        class="img-45 radius-50 ">
+                                                                </a>
+                                                                <span class="chat-time mt-1">6:45</span>
+                                                            </div>
+                                                            <div class="chat-detail">
+                                                                <div class="chat-message">
+                                                                    <p>How can we help? We're here for you! 😄</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="chat chat-left">
+                                                            <div class="chat-user">
+                                                                <a class="avatar m-0">
+                                                                    <img src="../images/user-2.jpg" alt="avatar"
+                                                                        class="img-45 radius-50 ">
+                                                                </a>
+                                                                <span class="chat-time mt-1">6:48</span>
+                                                            </div>
+                                                            <div class="chat-detail">
+                                                                <div class="chat-message">
+                                                                    <p>Hey John, I am looking for the best laptop</p>
+                                                                    <p>Could you please help me to find it out? 🤔</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="chat">
+                                                            <div class="chat-user">
+                                                                <a class="avatar m-0">
+                                                                    <img src="../images/user-2.jpg" alt="avatar"
+                                                                        class="img-45 radius-50 ">
+                                                                </a>
+                                                                <span class="chat-time mt-1">6:49</span>
+                                                            </div>
+                                                            <div class="chat-detail">
+                                                                <div class="chat-message">
+                                                                    <p>Absolutely!</p>
+                                                                    <p>Macbook Pro 2030</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="chat chat-left">
+                                                            <div class="chat-user">
+                                                                <a class="avatar m-0">
+                                                                    <img src="../images/user-2.jpg" alt="avatar"
+                                                                        class="img-45 radius-50 ">
+                                                                </a>
+                                                                <span class="chat-time mt-1">6:52</span>
+                                                            </div>
+                                                            <div class="chat-detail">
+                                                                <div class="chat-message">
+                                                                    <p>Looks clean and fresh</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="chat">
+                                                            <div class="chat-user">
+                                                                <a class="avatar m-0">
+                                                                    <img src="../images/user-2.jpg" alt="avatar"
+                                                                        class="img-45 radius-50 ">
+                                                                </a>
+                                                                <span class="chat-time mt-1">6:53</span>
+                                                            </div>
+                                                            <div class="chat-detail">
+                                                                <div class="chat-message">
+                                                                    <p>Thanks, from Apple</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="chat chat-left">
+                                                            <div class="chat-user">
+                                                                <a class="avatar m-0">
+                                                                    <img src="../images/user-2.jpg" alt="avatar"
+                                                                        class="img-45 radius-50 ">
+                                                                </a>
+                                                                <span class="chat-time mt-1">6:54</span>
+                                                            </div>
+                                                            <div class="chat-detail">
+                                                                <div class="chat-message">
+                                                                    <p>I will purchase it for sure. 👍</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="chat">
+                                                            <div class="chat-user">
+                                                                <a class="avatar m-0">
+                                                                    <img src="../images/user-2.jpg" alt="avatar"
+                                                                        class="img-45 radius-50 ">
+                                                                </a>
+                                                                <span class="chat-time mt-1">6:56</span>
+                                                            </div>
+                                                            <div class="chat-detail">
+                                                                <div class="chat-message">
+                                                                    <p>Okay Thanks..</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="chat-footer">
+
+                                                        <!-- ---------------------------- Message Form ----------------------------- -->
+
+                                                        <form class="message-form" action="">
+
+                                                            <div class="chat-attagement">
+                                                                <a href="">
+                                                                    <i class='bx bx-happy'></i>
+                                                                </a>
+                                                                <a href="">
+                                                                    <i class='bx bx-paperclip'></i>
+                                                                </a>
+                                                            </div>
+                                                            <input type="text" class="form-control mr-3"
+                                                                placeholder="Type your message">
+                                                            <button type="submit" class="btn">
+                                                                <i class='bx bx-send'></i>
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </main>
+    </div>
+    <!-- ------------------------------ Bootstrap ------------------------------ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

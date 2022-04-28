@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <!-- ------------------------------- Favicon ------------------------------- -->
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+
+    <!-- ------------------------------- Boxicon ------------------------------- -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- ------------------------------ Bootstrap ------------------------------ -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <!-- ----------------------------- Custom Css ------------------------------ -->
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <!-- ------------------------------- Overlay ------------------------------- -->
+        <div class="overlay closed" data-overlay>
+        </div>
+
+        <!-- ------------------------------- Header -------------------------------- -->
+
+        <header class="header">
+            <!-- ----------------------------- Top Navbar ------------------------------ -->
+            <nav class="navbar">
+                <div class="navbar__brand">
+                    <a class="navbar__logo" href="#">
+                        <img src="../images/logo.png" alt="" class="d-inline-block align-text-top">
+                        <span>ORY</span>
+                    </a>
+                    <div class="navbar__toggle">
+                        <i class='bx bx-menu'></i>
+                    </div>
+                </div>
+                <div class="navbar__searchbar">
+                    <form class="search-form">
+                        <input class="form-control" type="text" placeholder="Search">
+                        <button class="btn" type="submit">
+                            <i class='bx bx-search'></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="navbar__menu">
+                    <a href="" class="user-link">
+                        <img src="../images/user-1.jpg" alt="user">
+                        <span>John Doe</span>
+                    </a>
+                    <a href="">
+                        <i class='bx bxs-home'></i>
+                    </a>
+                    <div class="btn-group">
+                        <button class="btn" type="button" id="messageUserId" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class='bx bxs-group'></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="messageUserId">
+                            <a href="#" class="dropdown-item">
+                                <div class="icon">
+                                    <img class="img-45 radius-50" src="../images/user-3.jpg" alt="user-avatar">
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Bni Emma Watson</h5>
+                                    <small class="">13 Mar</small>
+                                    <p>Hello</p>
+                                </div>
+                                <button class="btn btn-primary">Confirm</button>
+                                <button class="btn btn-danger">Delete Request</button>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <div class="icon">
+                                    <img class="img-45 radius-50" src="../images/user-3.jpg" alt="user-avatar">
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Bni Emma Watson</h5>
+                                    <small class="">13 Mar</small>
+                                    <p>Hello</p>
+                                </div>
+                                <button class="btn btn-primary">Confirm</button>
+                                <button class="btn btn-danger">Delete Request</button>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <div class="icon">
+                                    <img class="img-45 radius-50" src="../images/user-3.jpg" alt="user-avatar">
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Bni Emma Watson</h5>
+                                    <small class="">13 Mar</small>
+                                    <p>Hello</p>
+                                </div>
+                                <button class="btn btn-primary">Confirm</button>
+                                <button class="btn btn-danger">Delete Request</button>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <div class="icon">
+                                    <img class="img-45 radius-50" src="../images/user-3.jpg" alt="user-avatar">
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Bni Emma Watson</h5>
+                                    <small class="">13 Mar</small>
+                                    <p>Hello</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn" type="button" id="messageUserId" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class='bx bxs-message'></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="messageUserId">
+                            <a href="#" class="dropdown-item">
+                                <div class="icon">
+                                    <img class="img-45 radius-50" src="../images/user-3.jpg" alt="user-avatar">
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Bni Emma Watson</h5>
+                                    <small class="">13 Mar</small>
+                                    <p>Hello</p>
+                                </div>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <div class="icon">
+                                    <img class="img-45 radius-50" src="../images/user-3.jpg" alt="user-avatar">
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Bni Emma Watson</h5>
+                                    <small class="">13 Mar</small>
+                                    <p>Hello</p>
+                                </div>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <div class="icon">
+                                    <img class="img-45 radius-50" src="../images/user-3.jpg" alt="user-avatar">
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Bni Emma Watson</h5>
+                                    <small class="">13 Mar</small>
+                                    <p>Hello</p>
+                                </div>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <div class="icon">
+                                    <img class="img-45 radius-50" src="../images/user-3.jpg" alt="user-avatar">
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Bni Emma Watson</h5>
+                                    <small class="">13 Mar</small>
+                                    <p>Hello</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn" type="button" id="notificationUserId" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class='bx bxs-bell'></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationUserId">
+                            <a href="#" class="dropdown-item">
+                                <div class="icon">
+                                    <img class="img-45 radius-50" src="../images/user-3.jpg" alt="user-avatar">
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Bni Emma Watson</h5>
+                                    <small class="">13 Mar</small>
+                                    <p>has add a story</p>
+                                </div>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <div class="icon">
+                                    <img class="img-45 radius-50" src="../images/user-3.jpg" alt="user-avatar">
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Bni Emma Watson</h5>
+                                    <small class="">13 Mar</small>
+                                    <p>has add a story</p>
+                                </div>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <div class="icon">
+                                    <img class="img-45 radius-50" src="../images/user-3.jpg" alt="user-avatar">
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Bni Emma Watson</h5>
+                                    <small class="">13 Mar</small>
+                                    <p>has add a story</p>
+                                </div>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <div class="icon">
+                                    <img class="img-45 radius-50" src="../images/user-3.jpg" alt="user-avatar">
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Bni Emma Watson</h5>
+                                    <small class="">13 Mar</small>
+                                    <p>has add a story</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn" type="button" id="userMenu" data-bs-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class='bx bxs-down-arrow'></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+                            <a href="profile.html" class="dropdown-item">
+                                <div class="icon">
+                                    <i class='bx bxs-user-account'></i>
+                                </div>
+                                <div class="description">
+                                    <h5 class="">My Profile</h5>
+                                    <p class="">View personal profile details.</p>
+                                </div>
+                            </a>
+                            <a href="profile.html" class="dropdown-item">
+                                <div class="icon">
+                                    <i class='bx bx-edit'></i>
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Edit Profile</h5>
+                                    <p class="">Edit your personal details.</p>
+                                </div>
+                            </a>
+                            <a href="profile.html" class="dropdown-item">
+                                <div class="icon">
+                                    <i class='bx bx-user-pin'></i>
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Account Settings</h5>
+                                    <p class="">Manager your account parameters.</p>
+                                </div>
+                            </a>
+                            <a href="profile.html" class="dropdown-item">
+                                <div class="icon">
+                                    <i class='bx bx-lock'></i>
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Privacy Settings</h5>
+                                    <p class="">Control your privacy parameters.</p>
+                                </div>
+                            </a>
+                            <a href="profile.html" class="dropdown-item">
+                                <div class="icon">
+                                    <i class='bx bx-exit'></i>
+                                </div>
+                                <div class="description">
+                                    <h5 class="">Logout Account</h6>
+                                        <p class="">Logout your account soon.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- ---------------------------- Main Content ----------------------------- -->
+
+        <main class="main-container">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col col-12 col-md-3">
+                        <!-- ------------------------------- Sidebar ------------------------------- -->
+                        <div class="sidebar">
+                            <nav class="sidebar__menu">
+                                <ul class="menu">
+                                    <li class="active" class="menu__item">
+                                        <a href="index.html" class="">
+                                            <i class='bx bx-news'></i>
+                                            <span>Newsfeed</span></a>
+                                    </li>
+                                    <li class="active" class="menu__item">
+                                        <a href="index.html" class="">
+                                            <i class='bx bx-group'></i>
+                                            <span>Group</span></a>
+                                    </li>
+                                    <li class="active" class="menu__item">
+                                        <a href="index.html" class="">
+                                            <i class='bx bx-conversation'></i>
+                                            <span>Chat</span></a>
+                                    </li>
+                                    <li class="active" class="menu__item">
+                                        <a href="index.html" class="">
+                                            <i class='bx bx-calendar-event'></i>
+                                            <span>Event</span></a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col col-12 col-md-9 col-lg-6 main-content">
+
+                        <!-- -------------------------- Create Post Form --------------------------- -->
+
+                        <section class="section part post-create">
+                            <div class="section__body" data-bs-toggle="modal" data-bs-target="#modelId">
+                                <div class="post-create__text">
+                                    <div class="user-img">
+                                        <img src="../images/user-1.jpg" class="img-60 radius-50" alt="">
+                                    </div>
+                                    <form action="" class="">
+                                        <input class="form-control" type="text" name="text-field"
+                                            placeholder="What's on your mind?">
+                                    </form>
+                                </div>
+                                <div class="post-create__options">
+                                    <ul class="options">
+                                        <li class="option">
+                                            <i class='bx bx-image-add'></i>Photo/Video
+                                        </li>
+                                        <li class="option">
+                                            <i class='bx bxs-user-rectangle'></i>Tag Friends
+                                        </li>
+                                        <li class="option">
+                                            <i class='bx bxs-happy'></i>Feeling/Activity
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <!-- -------------------------------- Modal -------------------------------- -->
+                            <div class="modal fade" id="modelId" tabindex="-1" role="dialog"
+                                aria-labelledby="modelTitleId" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Create Post</h4>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="post-create__text">
+                                                <div class="user-img">
+                                                    <img src="../images/user-1.jpg" class="img-60 radius-50" alt="">
+                                                </div>
+                                                <form action="" class="">
+                                                    <input class="form-control" type="text" name="text-field"
+                                                        placeholder="What's on your mind?">
+                                                </form>
+                                            </div>
+                                            <div class="post-create__options">
+                                                <ul class="options">
+                                                    <li class="option">
+                                                        <i class='bx bx-image-add'></i>Photo/Video
+                                                    </li>
+                                                    <li class="option">
+                                                        <i class='bx bxs-user-rectangle'></i>Tag Friends
+                                                    </li>
+                                                    <li class="option">
+                                                        <i class='bx bxs-happy'></i>Feeling/Activity
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <button type="submit" class="btn">Post</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </section>
+
+                        <!-- ------------------------------ New feed ------------------------------- -->
+                        <div class="post-list">
+                            <div class="part post">
+                                <div class="post__user-data">
+                                    <div class="user-img">
+                                        <img class="img-60 radius-50" src="../images/user-1.jpg" alt="avatar">
+                                    </div>
+                                    <div class="info">
+                                        <h4 class="">
+                                            <a href="#" class="">Anna Sthesia</a>
+                                        </h4>
+                                        <p class="">Just Now</p>
+                                    </div>
+                                    <div class="btn-group post-toolbar">
+                                        <button class="btn" type="button" id="postToolbarId" data-bs-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                            <i class='bx bx-dots-vertical-rounded'></i>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="postToolbarId">
+                                            <a class="dropdown-item" href="#">
+                                                <div class="icon">
+                                                    <i class='bx bx-save'></i>
+                                                </div>
+                                                <div class="description">
+                                                    <h5>Save Post</h5>
+                                                    <p class="">Add this to your saved items</p>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="icon">
+                                                    <i class='bx bx-window-close'></i>
+                                                </div>
+                                                <div class="description">
+                                                    <h5>Hide Post</h5>
+                                                    <p class="">See fewer posts like this.</p>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="icon">
+                                                    <i class='bx bx-user-x'></i>
+                                                </div>
+                                                <div class="description">
+                                                    <h5>Unfollow User</h5>
+                                                    <p class="">Stop seeing posts but stay friends.</p>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="icon">
+                                                    <i class='bx bx-bell'></i>
+                                                </div>
+                                                <div class="description">
+                                                    <h5>Notifications</h5>
+                                                    <p class="">Turn on notifications for this post</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="post__content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nulla dolor,
+                                        ornare at commodo non, feugiat non nisi. Phasellus faucibus mollis pharetra.
+                                        Proin blandit ac massa sed rhoncus</p>
+                                </div>
+                                <div class="post__media">
+                                    <div class="d-flex">
+                                        <div class="col-md-6">
+                                            <a href="">
+                                                <img src="../images/people3.webp" alt="post-image" class="">
+                                            </a>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="col-sm-12">
+                                                <a href="">
+                                                    <img src="../images/people2.webp" alt="post-image"
+                                                        class="img-fluid rounded w-100">
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <a href="">
+                                                    <img src="../images/people1.webp" alt="post-image"
+                                                        class="img-fluid rounded w-100">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="post__comment">
+                                    <div class="comment__top">
+                                        <div class="like-block">
+                                            <a href="">
+                                                <i class="bx bx-heart"></i>
+                                            </a>
+                                            <span>40 Likes</span>
+                                            <span>20 Comments</span>
+                                        </div>
+                                        <div class="share-block">
+                                            <a href="">
+                                                <i class='bx bx-share'></i>
+                                                <span class="">99 Share</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <ul class="comment__list">
+                                        <li class="comment">
+                                            <div class="user-img">
+                                                <img src="../images/people4.jpg" alt="userimg" class="img-45 radius-50">
+                                            </div>
+                                            <div class="comment__data">
+                                                <h5>Monty Carlo</h5>
+                                                <p class="">Lorem ipsum dolor sit amet</p>
+                                                <div class="comment-activity">
+                                                    <a href="">like</a>
+                                                    <a href="">reply</a>
+                                                    <span> 5 min </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="comment">
+                                            <div class="user-img">
+                                                <img src="../images/people4.jpg" alt="userimg" class="img-45 radius-50">
+                                            </div>
+                                            <div class="comment__data">
+                                                <h5>Monty Carlo</h5>
+                                                <p class="">Lorem ipsum dolor sit amet</p>
+                                                <div class="comment-activity">
+                                                    <a href="">like</a>
+                                                    <a href="">reply</a>
+                                                    <span> 5 min </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <form class="comment__form" action="">
+                                        <input type="text" class="form-control" placeholder="Type comment here...">
+                                        <div class="comment-attagement">
+                                            <a href="">
+                                                <i class='bx bx-link'></i>
+                                            </a>
+                                            <a href="">
+                                                <i class='bx bx-smile'></i></i>
+                                            </a>
+                                            <a href="">
+                                                <i class='bx bx-camera'></i></i>
+                                            </a>
+                                        </div>
+                                        <button type="submit" class="btn">
+                                            <i class='bx bx-send'></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="part post">
+                                <div class="post__user-data">
+                                    <div class="user-img">
+                                        <img class="img-60 radius-50" src="../images/user-1.jpg" alt="avatar">
+                                    </div>
+                                    <div class="info">
+                                        <h4 class="">
+                                            <a href="#" class="">Anna Sthesia</a>
+                                        </h4>
+                                        <p class="">Just Now</p>
+                                    </div>
+                                    <div class="btn-group post-toolbar">
+                                        <button class="btn" type="button" id="postToolbarId" data-bs-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                            <i class='bx bx-dots-vertical-rounded'></i>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="postToolbarId">
+                                            <a class="dropdown-item" href="#">
+                                                <div class="icon">
+                                                    <i class='bx bx-save'></i>
+                                                </div>
+                                                <div class="description">
+                                                    <h5>Save Post</h5>
+                                                    <p class="">Add this to your saved items</p>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="icon">
+                                                    <i class='bx bx-window-close'></i>
+                                                </div>
+                                                <div class="description">
+                                                    <h5>Hide Post</h5>
+                                                    <p class="">See fewer posts like this.</p>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="icon">
+                                                    <i class='bx bx-user-x'></i>
+                                                </div>
+                                                <div class="description">
+                                                    <h5>Unfollow User</h5>
+                                                    <p class="">Stop seeing posts but stay friends.</p>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="icon">
+                                                    <i class='bx bx-bell'></i>
+                                                </div>
+                                                <div class="description">
+                                                    <h5>Notifications</h5>
+                                                    <p class="">Turn on notifications for this post</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="post__content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nulla dolor,
+                                        ornare at commodo non, feugiat non nisi. Phasellus faucibus mollis pharetra.
+                                        Proin blandit ac massa sed rhoncus</p>
+                                </div>
+                                <div class="post__media">
+                                    <div class="d-flex">
+                                        <div class="col-md-6">
+                                            <a href="">
+                                                <img src="../images/people3.webp" alt="post-image" class="">
+                                            </a>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="col-sm-12">
+                                                <a href="">
+                                                    <img src="../images/people2.webp" alt="post-image"
+                                                        class="img-fluid rounded w-100">
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <a href="">
+                                                    <img src="../images/people1.webp" alt="post-image"
+                                                        class="img-fluid rounded w-100">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="post__comment">
+                                    <div class="comment__top">
+                                        <div class="like-block">
+                                            <a href="">
+                                                <i class="bx bx-heart"></i>
+                                            </a>
+                                            <span>40 Likes</span>
+                                            <span>20 Comments</span>
+                                        </div>
+                                        <div class="share-block">
+                                            <a href="">
+                                                <i class='bx bx-share'></i>
+                                                <span class="">99 Share</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <ul class="comment__list">
+                                        <li class="comment">
+                                            <div class="user-img">
+                                                <img src="../images/people4.jpg" alt="userimg" class="img-45 radius-50">
+                                            </div>
+                                            <div class="comment__data">
+                                                <h5>Monty Carlo</h5>
+                                                <p class="">Lorem ipsum dolor sit amet</p>
+                                                <div class="comment-activity">
+                                                    <a href="">like</a>
+                                                    <a href="">reply</a>
+                                                    <span> 5 min </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="comment">
+                                            <div class="user-img">
+                                                <img src="../images/people4.jpg" alt="userimg" class="img-45 radius-50">
+                                            </div>
+                                            <div class="comment__data">
+                                                <h5>Monty Carlo</h5>
+                                                <p class="">Lorem ipsum dolor sit amet</p>
+                                                <div class="comment-activity">
+                                                    <a href="">like</a>
+                                                    <a href="">reply</a>
+                                                    <span> 5 min </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <form class="comment__form" action="">
+                                        <input type="text" class="form-control" placeholder="Type comment here...">
+                                        <div class="comment-attagement">
+                                            <a href="">
+                                                <i class='bx bx-link'></i>
+                                            </a>
+                                            <a href="">
+                                                <i class='bx bx-smile'></i></i>
+                                            </a>
+                                            <a href="">
+                                                <i class='bx bx-camera'></i></i>
+                                            </a>
+                                        </div>
+                                        <button type="submit" class="btn">
+                                            <i class='bx bx-send'></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col col-12 col-lg-3">
+                        <!-- ---------------------------- Right Sidebar ---------------------------- -->
+                        <div class="right-sidebar">
+
+                            <div class="right-sidebar__item">
+                                <div class="user-img status-online">
+                                    <img class="img-50 radius-50" src="../images/user-1.jpg" alt="user-img">
+                                </div>
+                                <div class="description">
+                                    <h4 class=""><a href="#">Anna Sthesia</a></h4>
+                                    <span class="">Just Now</span>
+                                </div>
+                            </div>
+                            <div class="right-sidebar__item">
+                                <div class="user-img status-online">
+                                    <img class="img-50 radius-50" src="../images/user-1.jpg" alt="user-img">
+                                </div>
+                                <div class="description">
+                                    <h4 class=""><a href="#">Anna Sthesia</a></h4>
+                                    <span class="">Just Now</span>
+                                </div>
+                            </div>
+                            <div class="right-sidebar__item">
+                                <div class="user-img status-online">
+                                    <img class="img-50 radius-50" src="../images/user-1.jpg" alt="user-img">
+                                </div>
+                                <div class="description">
+                                    <h4 class=""><a href="#">Anna Sthesia</a></h5>
+                                    <span class="">Just Now</s>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </main>
+    </div>
+    <!-- ------------------------------ Bootstrap ------------------------------ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
