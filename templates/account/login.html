@@ -1,0 +1,117 @@
+{% extends "account/base.html" %}
+{% load static %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+
+    <div class="sign-form">
+        <h1>Sign in</h1>
+        <p>Enter your email address and password to access page.</p>
+        <form class="login" method="POST" action="{% url 'account_login' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="{{ form.login.id_for_label }}">{{ form.login.label }}</label>
+                {{ form.login }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.password.id_for_label }}">{{ form.password.label }}</label>
+                <a href="{% url 'account_reset_password' %}" class="float-right">Forgot password?</a>
+                {{ form.password }}
+            </div>
+            {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}"
+                       value="{{ redirect_field_value }}"/>
+            {% endif %}
+            <div class="custom-control custom-checkbox">
+                {{ form.remember }}
+                <label class="custom-control-label" for="{{ form.remember.id_for_label }}">Remember
+                    Me</label>
+            </div>
+            <button type="submit" class="btn">Sign in</button>
+            <div class="sign-info">
+                                <span class="">Don't have an account?
+                                    <a href="{{ signup_url }}">Sign up</a>
+                                </span>
+                {% get_providers as socialaccount_providers %}
+
+                {% if socialaccount_providers %}
+                    <p>{% blocktrans with site.name as site_name %}Or sign in with one
+                        of your existing third party accounts:{% endblocktrans %}</p>
+
+                    <div class="socialaccount_ballot">
+                        <ul class="socialaccount_providers social-media">
+                            {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+                        </ul>
+                    </div>
+
+                    {% include "socialaccount/snippets/login_extra.html" %}
+
+                {% else %}
+                    <p>{% blocktrans %}If you have not created an account yet, then please
+                        <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+                {% endif %}
+            </div>
+        </form>
+
+    </div>
+
+    {#    <div class="sign-in-from">#}
+    {#        <h1 class="mb-0">Sign in</h1>#}
+    {#        <p>Enter your email address and password to access admin panel.</p>#}
+    {#        <form class="login" method="POST" action="{% url 'account_login' %}">#}
+    {#            {% csrf_token %}#}
+    {#            <div class="form-group">#}
+    {#                <label for="{{ form.login.id_for_label }}">{{ form.login.label }}</label>#}
+    {#                {{ form.login }}#}
+    {#            </div>#}
+    {#            <div class="form-group">#}
+    {#                <label for="{{ form.password.id_for_label }}">{{ form.password.label }}</label>#}
+    {#                <a href="{% url 'account_reset_password' %}" class="float-right">Forgot password?</a>#}
+    {#                {{ form.password }}#}
+    {#            </div>#}
+    {#            {% if redirect_field_value %}#}
+    {#                <input type="hidden" name="{{ redirect_field_name }}"#}
+    {#                       value="{{ redirect_field_value }}"/>#}
+    {#            {% endif %}#}
+    {#            <div class="d-inline-block w-100">#}
+    {#                <div class="custom-control custom-checkbox d-inline-block mt-2 pt-1">#}
+    {#                    {{ form.remember }}#}
+    {#                    <label class="custom-control-label" for="{{ form.remember.id_for_label }}">Remember#}
+    {#                        Me</label>#}
+    {#                </div>#}
+    {#                <button type="submit" class="btn btn-primary float-right">Sign in</button>#}
+    {#            </div>#}
+    {#            <div class="sign-info">#}
+    {#                                <span class="dark-color d-inline-block line-height-2">Don't have an account? #}
+    {#                                    <a href="{{ signup_url }}">Sign up</a>#}
+    {#                                </span>#}
+    {#            </div>#}
+    {#        </form>#}
+    {##}
+    {#        {% get_providers as socialaccount_providers %}#}
+    {##}
+    {#        {% if socialaccount_providers %}#}
+    {#            <p>{% blocktrans with site.name as site_name %}Or sign in with one#}
+    {#                of your existing third party accounts:{% endblocktrans %}</p>#}
+    {##}
+    {#            <div class="socialaccount_ballot">#}
+    {##}
+    {#                <ul class="socialaccount_providers iq-social-media">#}
+    {#                    {% include "socialaccount/snippets/provider_list.html" with process="login" %}#}
+    {#                </ul>#}
+    {#            </div>#}
+    {##}
+    {#            {% include "socialaccount/snippets/login_extra.html" %}#}
+    {##}
+    {#        {% else %}#}
+    {#            <p>{% blocktrans %}If you have not created an account yet, then please#}
+    {#                <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>#}
+    {#        {% endif %}#}
+    {#    </div>#}
+
+    <!-- Sign in END -->
+{% endblock %}

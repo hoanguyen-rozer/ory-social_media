@@ -1,0 +1,145 @@
+<div class="post-list">
+    {% for post in post_list %}
+        <div class="part post">
+            <div class="post__user-data">
+                <div class="user-img">
+                    <img class="img-60 radius-50" src="{{ post.user.get_avatar }}" alt="avatar">
+                </div>
+                <div class="info">
+                    <h4 class="">
+                        <a href="{% url 'page:profile_page' post.user.username %}" class="">{{ post.user.username }}</a>
+                    </h4>
+                    <p class="">{{ post.created_at|timesince }}</p>
+                </div>
+                <div class="btn-group post-toolbar">
+                    <button class="btn" type="button" id="postToolbarId" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        <i class='bx bx-dots-vertical-rounded'></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="postToolbarId">
+                        <a class="dropdown-item" href="#">
+                            <div class="icon">
+                                <i class='bx bx-save'></i>
+                            </div>
+                            <div class="description">
+                                <h5>Save Post</h5>
+                                <p class="">Add this to your saved items</p>
+                            </div>
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <div class="icon">
+                                <i class='bx bx-window-close'></i>
+                            </div>
+                            <div class="description">
+                                <h5>Hide Post</h5>
+                                <p class="">See fewer posts like this.</p>
+                            </div>
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <div class="icon">
+                                <i class='bx bx-user-x'></i>
+                            </div>
+                            <div class="description">
+                                <h5>Unfollow User</h5>
+                                <p class="">Stop seeing posts but stay friends.</p>
+                            </div>
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <div class="icon">
+                                <i class='bx bx-bell'></i>
+                            </div>
+                            <div class="description">
+                                <h5>Notifications</h5>
+                                <p class="">Turn on notifications for this post</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="post__content">
+                <p>{{ post.content }}</p>
+            </div>
+            <div class="post__media">
+                <div class="d-flex flex-wrap">
+                    {% if post.images_of_post %}
+                        {% for image in post.images_of_post.all %}
+                            <div class="col-md-6">
+                                <a href="#">
+                                    <img src="{{ image.media.url }}" alt="post-image"
+                                         class="rounded">
+                                </a>
+                            </div>
+                        {% endfor %}
+
+                    {% endif %}
+
+                </div>
+            </div>
+            <div class="post__comment">
+                {% with post.comments_on_post.all as comments_on_post %}
+                    <div class="comment__top">
+                        <div class="like-block">
+                            <a class="like-link" href="{% url 'feeling:express_feeling' post.id %}" data-post="{{ post.id }}">
+                                {# Check whether user is expressed emotion on the post#}
+                                {% if request.user in post.get_expressed_users %}
+                                    <i class='bx bxs-heart'></i>
+                                {% else %}
+                                    <i class="bx bx-heart"></i>
+                                {% endif %}
+                            </a>
+                            {% with post.expressed_users.all as expressed_users %}
+                                <span>{{ expressed_users.count }} Likes</span>
+                            {% endwith %}
+
+                            <span>{{ comments_on_post.count }} Comments</span>
+                        </div>
+                        <div class="share-block">
+                            <a href="">
+                                <i class='bx bx-share'></i>
+                                <span class="">99 Share</span>
+                            </a>
+                        </div>
+                    </div>
+                    <hr>
+                    <ul class="comment__list list-comment-{{ post.id }}">
+                        {% for comment in comments_on_post %}
+
+                            <li class="comment">
+                                <div class="user-img">
+                                    <img src="{{ comment.user.get_avatar }}" alt="userimg" class="img-45 radius-50">
+                                </div>
+                                <div class="comment__data">
+                                    <h5>{{ comment.user.username }}</h5>
+                                    <p class="">{{ comment.content }}</p>
+                                    <div class="comment-activity">
+                                        <a href="">like</a>
+                                        <a href="">reply</a>
+                                        <span> {{ comment.created_at|timesince }} </span>
+                                    </div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endwith %}
+
+                <form class="comment__form comment-form-{{ post.id }}">
+                    <input type="text" class="form-control" name="content" placeholder="Type comment here...">
+                    <div class="comment-attagement">
+                        <a href="">
+                            <i class='bx bx-link'></i>
+                        </a>
+                        <a href="">
+                            <i class='bx bx-smile'></i></i>
+                        </a>
+                        <a href="">
+                            <i class='bx bx-camera'></i></i>
+                        </a>
+                    </div>
+                    <button type="submit" class="btn submit-add-comment" data-post="{{ post.id }}">
+                        <i class='bx bx-send'></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    {% endfor %}
+</div>

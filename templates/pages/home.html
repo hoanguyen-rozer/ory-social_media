@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <main class="main-container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col col-12 col-md-3">
+                    <!-- ------------------------------- Sidebar ------------------------------- -->
+                    {% include 'components/_sidebar.html' %}
+                </div>
+                <div class="col col-12 col-md-9 col-lg-6 main-content">
+
+                    <!-- -------------------------- Create Post Form --------------------------- -->
+
+                    <section class="section part post-create">
+                        <div class="section__body" data-bs-toggle="modal" data-bs-target="#modelId">
+                            <div class="post-create__text">
+                                <div class="user-img">
+                                    <img src="{{ request.user.get_avatar }}" class="img-60 radius-50" alt="">
+                                </div>
+                                <form action="" class="">
+                                    <input class="form-control" type="text" name="text-field"
+                                           placeholder="What's on your mind?">
+                                </form>
+                            </div>
+                            <div class="post-create__options">
+                                <ul class="options">
+                                    <li class="option">
+                                        <i class='bx bx-image-add'></i>Photo/Video
+                                    </li>
+                                    <li class="option">
+                                        <i class='bx bxs-user-rectangle'></i>Tag Friends
+                                    </li>
+                                    <li class="option">
+                                        <i class='bx bxs-happy'></i>Feeling/Activity
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                        <!-- -------------------------------- Modal -------------------------------- -->
+                        <div class="modal fade" id="modelId" tabindex="-1" role="dialog"
+                             aria-labelledby="modelTitleId" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Create Post</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                    </div>
+                                    <form class="modal-body" method="post" , action="{% url 'post:create' %}"
+                                          enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        <div class="post-create__text">
+                                            <div class="user-img">
+                                                <img src="{{ request.user.get_avatar }}" class="img-60 radius-50"
+                                                     alt="">
+                                            </div>
+                                            <div class="w-100 ml-3">
+                                                {{ post_create_form.content }}
+                                            </div>
+                                        </div>
+                                        <div class="post-create__options">
+                                            <ul class="options">
+                                                <li class="option">
+                                                    <label class=""
+                                                           for="{{ post_media_attach_form.media.id_for_label }}">
+                                                        <i class='bx bx-image-add'></i>Photo/Video
+                                                    </label>
+                                                    {{ post_media_attach_form.media }}
+
+                                                </li>
+                                                <li class="option">
+                                                    <i class='bx bxs-user-rectangle'></i>Tag Friends
+                                                </li>
+                                                <li class="option">
+                                                    <i class='bx bxs-happy'></i>Feeling/Activity
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <button type="submit" class="btn">Post</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <!-- ------------------------------ New feed ------------------------------- -->
+                    {% include 'components/_list_post.html' %}
+
+                </div>
+                <div class="col col-12 col-lg-3">
+                    <!-- ---------------------------- Right Sidebar ---------------------------- -->
+                    {% include 'components/_right_sidebar.html' %}
+                </div>
+            </div>
+
+    </main>
+
+{% endblock %}

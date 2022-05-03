@@ -1,0 +1,244 @@
+{% load static %}
+<header class="header">
+    <!-- ----------------------------- Top Navbar ------------------------------ -->
+    <nav class="navbar">
+        <div class="navbar__brand">
+            <a class="navbar__logo" href="#">
+                <img src="{% static 'images/logo.png' %}" alt="" class="d-inline-block align-text-top">
+                <span>ORY</span>
+            </a>
+            <div class="navbar__toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </div>
+        <div class="navbar__searchbar">
+            <form class="search-form">
+                <input class="form-control" type="text" placeholder="Search">
+                <button class="btn" type="submit">
+                    <i class='bx bx-search'></i>
+                </button>
+            </form>
+        </div>
+        <div class="navbar__menu">
+            <a href="{% url 'page:profile_page' request.user.username %}" class="user-link">
+                <img src="{{ request.user.get_avatar }}" alt="user">
+                <span>{{ request.user.username }}</span>
+            </a>
+            <a href="{% url 'page:homepage' %}">
+                <i class='bx bxs-home'></i>
+            </a>
+            <div class="btn-group">
+                <button class="btn" type="button" id="messageUserId" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                    <i class='bx bxs-group'></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="messageUserId">
+                    {% with user.get_friend_request|slice:":5" as friends_request_of_user %}
+                        <div class="bg-primary p-3">
+                            <h4 class="mb-0 text-white">Friend Request<small
+                                    class="badge badge-light float-right">{{ friends_request_of_user.count }}</small>
+                            </h4>
+                        </div>
+                        {% for friend_request in friends_request_of_user %}
+                            <a class="dropdown-item">
+                                <div class="icon">
+                                    <img class="img-45 radius-50" src="{{ friend_request.inviter.get_avatar }}"
+                                         alt="user-img">
+                                </div>
+                                <div class="description">
+                                    <h5 class="">{{ friend_request.inviter.username }}</h5>
+                                    <small class="">{{ friend_request.sent_at|timesince }}</small>
+                                    <p>{{ friend_request.inviter.get_friend_quantity }} friends</p>
+                                </div>
+                                <button class="btn btn-primary">Confirm</button>
+                                <button class="btn btn-danger">Delete Request</button>
+                            </a>
+
+
+                            {% comment %}<div class="iq-friend-request">
+                                <div class="iq-sub-card iq-sub-card-big d-flex align-items-center justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <div class="">
+                                            <img class="avatar-40 rounded-circle"
+                                                 src="{{ friend_request.inviter.get_avatar }}"
+                                                 alt="">
+                                        </div>
+                                        <div class="media-body ml-3">
+                                            <h6 class="mb-0 ">{{ friend_request.inviter.username }}</h6>
+                                            <p class="mb-0">{{ friend_request.inviter.get_friend_quantity }} friends</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <a hx-post="{% url 'user:friend_request_comfirm' friend_request.id %}"
+                                           hx-target="#friend-request-popup" hx-swap="outerHTML"
+                                           class="mr-3 btn btn-primary rounded">Confirm</a>
+                                        <a hx-post="{% url 'user:friend_request_delete' friend_request.id %}"
+                                           hx-target="#friend-request-popup" hx-swap="outerHTML"
+                                           class="mr-3 btn btn-secondary rounded">Delete Request</a>
+                                    </div>
+                                </div>
+                            </div>{% endcomment %}
+
+                        {% empty %}
+                            <div class="d-flex justify-content-center">
+                                <p>You don't have friend request.</p>
+                            </div>
+                        {% endfor %}
+                        <div class="text-center">
+                            <a href="#" class="mr-3 btn text-primary">View More Request</a>
+                        </div>
+                    {% endwith %}
+                </div>
+            </div>
+            <div class="btn-group">
+                <button class="btn" type="button" id="messageUserId" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                    <i class='bx bxs-message'></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="messageUserId">
+                    <a href="#" class="dropdown-item">
+                        <div class="icon">
+                            <img class="img-45 radius-50" src="{% static 'images/user-3.jpg' %}" alt="user-avatar">
+                        </div>
+                        <div class="description">
+                            <h5 class="">Bni Emma Watson</h5>
+                            <small class="">13 Mar</small>
+                            <p>Hello</p>
+                        </div>
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        <div class="icon">
+                            <img class="img-45 radius-50" src="{% static 'images/user-3.jpg' %}" alt="user-avatar">
+                        </div>
+                        <div class="description">
+                            <h5 class="">Bni Emma Watson</h5>
+                            <small class="">13 Mar</small>
+                            <p>Hello</p>
+                        </div>
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        <div class="icon">
+                            <img class="img-45 radius-50" src="{% static 'images/user-3.jpg' %}" alt="user-avatar">
+                        </div>
+                        <div class="description">
+                            <h5 class="">Bni Emma Watson</h5>
+                            <small class="">13 Mar</small>
+                            <p>Hello</p>
+                        </div>
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        <div class="icon">
+                            <img class="img-45 radius-50" src="{% static 'images/user-3.jpg' %}" alt="user-avatar">
+                        </div>
+                        <div class="description">
+                            <h5 class="">Bni Emma Watson</h5>
+                            <small class="">13 Mar</small>
+                            <p>Hello</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="btn-group">
+                <button class="btn" type="button" id="notificationUserId" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                    <i class='bx bxs-bell'></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationUserId">
+                    <a href="#" class="dropdown-item">
+                        <div class="icon">
+                            <img class="img-45 radius-50" src="{% static 'images/user-3.jpg' %}" alt="user-avatar">
+                        </div>
+                        <div class="description">
+                            <h5 class="">Bni Emma Watson</h5>
+                            <small class="">13 Mar</small>
+                            <p>has add a story</p>
+                        </div>
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        <div class="icon">
+                            <img class="img-45 radius-50" src="{% static 'images/user-3.jpg' %}" alt="user-avatar">
+                        </div>
+                        <div class="description">
+                            <h5 class="">Bni Emma Watson</h5>
+                            <small class="">13 Mar</small>
+                            <p>has add a story</p>
+                        </div>
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        <div class="icon">
+                            <img class="img-45 radius-50" src="{% static 'images/user-3.jpg' %}" alt="user-avatar">
+                        </div>
+                        <div class="description">
+                            <h5 class="">Bni Emma Watson</h5>
+                            <small class="">13 Mar</small>
+                            <p>has add a story</p>
+                        </div>
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        <div class="icon">
+                            <img class="img-45 radius-50" src="{% static 'images/user-3.jpg' %}" alt="user-avatar">
+                        </div>
+                        <div class="description">
+                            <h5 class="">Bni Emma Watson</h5>
+                            <small class="">13 Mar</small>
+                            <p>has add a story</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="btn-group">
+                <button class="btn" type="button" id="userMenu" data-bs-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                    <i class='bx bxs-down-arrow'></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+                    <a href="{% url 'page:profile_page' request.user.username %}" class="dropdown-item">
+                        <div class="icon">
+                            <i class='bx bxs-user-account'></i>
+                        </div>
+                        <div class="description">
+                            <h5 class="">My Profile</h5>
+                            <p class="">View personal profile details.</p>
+                        </div>
+                    </a>
+                    <a href="{% url 'page:profile_page' request.user.username %}" class="dropdown-item">
+                        <div class="icon">
+                            <i class='bx bx-edit'></i>
+                        </div>
+                        <div class="description">
+                            <h5 class="">Edit Profile</h5>
+                            <p class="">Edit your personal details.</p>
+                        </div>
+                    </a>
+                    <a href="{% url 'page:profile_page' request.user.username %}" class="dropdown-item">
+                        <div class="icon">
+                            <i class='bx bx-user-pin'></i>
+                        </div>
+                        <div class="description">
+                            <h5 class="">Account Settings</h5>
+                            <p class="">Manager your account parameters.</p>
+                        </div>
+                    </a>
+                    <a href="{% url 'page:profile_page' request.user.username %}" class="dropdown-item">
+                        <div class="icon">
+                            <i class='bx bx-lock'></i>
+                        </div>
+                        <div class="description">
+                            <h5 class="">Privacy Settings</h5>
+                            <p class="">Control your privacy parameters.</p>
+                        </div>
+                    </a>
+                    <a href="{% url 'page:profile_page' request.user.username %}" class="dropdown-item">
+                        <div class="icon">
+                            <i class='bx bx-exit'></i>
+                        </div>
+                        <div class="description">
+                            <h5 class="">Logout Account</h5>
+                            <p class="">Logout your account soon.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

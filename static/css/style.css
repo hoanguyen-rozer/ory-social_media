@@ -1150,6 +1150,22 @@ textarea {
   font-size: 2rem;
 }
 
+.date_weekday {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  padding: 5px 12px 6px;
+  font-size: 1.6rem;
+  background-color: #d8d7d7;
+  border-radius: 7.5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.1);
+}
+
 .sign-container {
   background-color: #eef3fb;
   position: relative;

@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load dict_value %}
+{% block content %}
+    <main class="main-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card__body chat-page">
+                            <div class="chat-data-block">
+                                <div class="row">
+                                    <div class="col-lg-3 chat-data-left">
+
+                                        <!-- ---------------------------- Chat Sidebar ----------------------------- -->
+
+                                        <div class="chat-search">
+                                            <div class="chat-search__header">
+                                                <div class="chat-profile">
+                                                    <img src="{{ request.user.get_avatar }}" alt="chat-user"
+                                                         class="img-60 radius-50 ">
+                                                </div>
+                                                <div class="chat-caption">
+                                                    <h5 class="">{{ request.user.username }}</h5>
+                                                    <p class="">Web Designer</p>
+                                                </div>
+                                            </div>
+                                            <div class="chat-search__searchbar">
+                                                <div class="form-group chat-search-data m-0">
+                                                    <input type="text" class="form-control round" id="chat-search"
+                                                           placeholder="Search">
+                                                    <i class='bx bx-search'></i>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="chat-sidebar-channel">
+                                            <h5>Public Channels</h5>
+
+                                            <!-- List chat users -->
+
+                                            <ul class="nav nav-pills flex-column member-list">
+
+                                                {% for group in groups_participated %}
+                                                    {% with participants=group|dict_value:'participants' group_chat=group|dict_value:'chat_group' %}
+                                                        <li class="nav-item">
+                                                            <a href="{{ group_chat.get_absolute_url }}"
+                                                               class="nav-link">
+                                                                <div class="chat-member">
+                                                                    <div class="avatar mr-2">
+                                                                        <img src="{{ participants.get_avatar }}"
+                                                                             alt="chatuserimage"
+                                                                             class="img-50 radius-50 ">
+                                                                    </div>
+                                                                    <div class="chat-sidebar-name">
+                                                                        <h5 class="mb-0">{{ participants.username }}</h5>
+                                                                        <span>Lorem Ipsum is</span>
+                                                                    </div>
+                                                                    <div class="chat-meta">
+                                                                        <div class="chat-msg-counter bg-primary text-white">
+                                                                            20
+                                                                        </div>
+                                                                        <span class="text-nowrap">05 min</span>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    {% endwith %}
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-9">
+
+                                        <!-- -------------------------- Chat Box Content --------------------------- -->
+
+                                        <div class="tab-content chat-data">
+                                            <div class="tab-pane fade active show" role="tabpanel">
+                                                <div class="chat-head">
+                                                    <div class="chat-header-info">
+                                                        <div class="avatar chat-user-profile">
+                                                            <img src="{{ participants.get_avatar }}" alt="avatar"
+                                                                 class="img-50 radius-50 ">
+                                                        </div>
+                                                        <h4 class="mb-0">{{ participants.username }}</h4>
+                                                    </div>
+                                                    <div class="chat-header-icons">
+                                                        <a href="" class="chat-icon-phone">
+                                                            <i class='bx bx-phone-call'></i>
+                                                        </a>
+                                                        <a href="" class="chat-icon-video">
+                                                            <i class='bx bx-video'></i>
+                                                        </a>
+                                                        <a href="" class="chat-icon-delete">
+                                                            <i class='bx bx-trash'></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="chat-content">
+                                                    <div id="new-message-chat"></div>
+                                                </div>
+                                                <div class="chat-footer">
+
+                                                    <!-- ---------------------------- Message Form ----------------------------- -->
+
+                                                    <form class="message-form" action="">
+
+                                                        <div class="chat-attagement">
+                                                            <a href="">
+                                                                <i class='bx bx-happy'></i>
+                                                            </a>
+                                                            <a href="">
+                                                                <i class='bx bx-paperclip'></i>
+                                                            </a>
+                                                        </div>
+                                                        <input type="text" id="chat-message-input"
+                                                               class="form-control mr-3"
+                                                               placeholder="Type your message">
+                                                        <button type="submit" class="btn" id="chat-message-submit">
+                                                            <i class='bx bx-send'></i>
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+{% endblock %}
+{% block extra_js %}
+    <script>
+        let chatgroupId = '{{ chatgroup.id }}';
+        console.log('CALL HERE', chatgroupId);
+        const userAvatar =  '{{ request.user.get_avatar }}';
+        const username = '{{ request.user.username|title }}';
+    </script>
+    <script src="{% static 'js/chat.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends "account/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block head_title %}{% trans "Signup" %}{% endblock %}
+
+{% block content %}
+    <!-- Sign up Start -->
+
+    <div class="sign-form">
+        <h1 class="mb-0">Sign Up</h1>
+        <p>Enter your email address and password to access page.</p>
+        <form class="signup mt-4" id="signup_form" method="post" action="{% url 'account_signup' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+                {{ form.email }}
+                {{ form.email.errors }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.username.id_for_label }}">{{ form.username.label }}</label>
+                {{ form.username }}
+                {{ form.username.errors }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.password1.id_for_label }}">{{ form.password1.label }}</label>
+                {{ form.password1 }}
+                {{ form.password1.errors }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.password2.id_for_label }}">{{ form.password2.label }}</label>
+                {{ form.password2 }}
+                {{ form.password2.errors }}
+            </div>
+            {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}"
+                       value="{{ redirect_field_value }}"/>
+            {% endif %}
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="termsCheckbox">
+                <label class="custom-control-label" for="termsCheckbox">I accept <a href="#">Terms
+                    and Conditions</a>
+                </label>
+            </div>
+            <button type="submit" class="btn">Sign Up</button>
+            <div class="sign-info">
+                <span class="">Already Have Account ? <a href="{{ login_url }}">Log In</a></span>
+                {% comment %}<ul class="social-media">
+                    <li><a href="#"><i class="bx bxl-facebook"></i></a></li>
+                    <li><a href="#"><i class="bx bxl-google"></i></a></li>
+                    <li><a href="#"><i class="bx bxl-instagram"></i></a></li>
+                </ul>{% endcomment %}
+            </div>
+        </form>
+    </div>
+
+    {% comment %}<div class="sign-in-from">
+        <h1 class="mb-0">Sign Up</h1>
+        <p>Enter your email address, username and password to create your account.</p>
+        <form class="signup mt-4" id="signup_form" method="post" action="{% url 'account_signup' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+                {{ form.email }}
+                {{ form.email.errors }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.username.id_for_label }}">{{ form.username.label }}</label>
+                {{ form.username }}
+                {{ form.username.errors }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.password1.id_for_label }}">{{ form.password1.label }}</label>
+                {{ form.password1 }}
+                {{ form.password1.errors }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.password2.id_for_label }}">{{ form.password2.label }}</label>
+                {{ form.password2 }}
+                {{ form.password2.errors }}
+            </div>
+            {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}"
+                       value="{{ redirect_field_value }}"/>
+            {% endif %}
+            <div class="d-inline-block w-100">
+                <div class="custom-control custom-checkbox d-inline-block mt-2 pt-1">
+                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                    <label class="custom-control-label" for="customCheck1">I accept <a href="#">Terms
+                        and Conditions</a></label>
+                </div>
+                <button type="submit" class="btn btn-primary float-right">Sign Up</button>
+            </div>
+            <div class="sign-info">
+                                <span class="dark-color d-inline-block line-height-2">Already Have Account ? <a
+                                        href="{{ login_url }}">Log In</a></span>
+                <ul class="iq-social-media">
+                                    <li><a href="#"><i class="ri-facebook-box-line"></i></a></li>
+                                    <li><a href="#"><i class="ri-twitter-line"></i></a></li>
+                                    <li><a href="#"><i class="ri-instagram-line"></i></a></li>
+                                </ul>
+            </div>
+        </form>
+    </div>{% endcomment %}
+    <!-- Sign up END -->
+{% endblock %}
